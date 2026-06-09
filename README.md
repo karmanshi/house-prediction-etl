@@ -8,8 +8,8 @@ The etl pipeline created using python, and pandas for ingesting and transforming
 
 ## Setup Steps:
 1. Change the working directory to etl using `cd etl`
-2. Unzip the file `input_data.zip`
-3. Create folder `output_data` in the current folder
+2. Unzip the file `input_data.zip` if `input_data` folder does not exists
+3. Create folder `output_data` in the current folder if `output_data` folder does not exists
 3. Create virtual environment using `python -m venv v_env`
 4. In windows activate virtual environment using `v_env/scripts/activate` and in linux use `source v_env/bin/activate` to activate
 5. Install dependencies using `pip install -r requirements.txt`
