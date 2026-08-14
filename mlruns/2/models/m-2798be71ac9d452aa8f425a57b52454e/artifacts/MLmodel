@@ -1,0 +1,23 @@
+artifact_path: file:///C:/Users/bhavy/Downloads/InvestmentScorer/mlruns/2/models/m-2798be71ac9d452aa8f425a57b52454e/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.11.9
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.0
+    skops_trusted_types: null
+mlflow_version: 3.14.0
+model_id: m-2798be71ac9d452aa8f425a57b52454e
+model_size_bytes: 3370160
+model_uuid: m-2798be71ac9d452aa8f425a57b52454e
+prompts: null
+run_id: 7f1008edeab14312b165422fe669e887
+utc_time_created: '2026-08-03 08:05:22.442721'

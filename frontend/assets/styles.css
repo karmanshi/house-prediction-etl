@@ -1,0 +1,180 @@
+/* ==========================================
+   REIOS Dashboard Theme
+========================================== */
+
+.main{
+    background:#f7f9fc;
+}
+
+.block-container{
+    padding-top:1rem;
+    padding-left:2rem;
+    padding-right:2rem;
+}
+
+/* Hide Streamlit default */
+#MainMenu{
+    visibility:hidden;
+}
+
+footer{
+    visibility:hidden;
+}
+
+header{
+    visibility:hidden;
+}
+
+/* ===========================
+   KPI Cards
+=========================== */
+
+.metric-card{
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+
+    border-left:6px solid #2E86DE;
+
+    margin-bottom:15px;
+}
+
+.metric-title{
+
+    font-size:15px;
+
+    color:#6c757d;
+
+    font-weight:600;
+}
+
+.metric-value{
+
+    font-size:34px;
+
+    color:#222;
+
+    font-weight:bold;
+}
+
+.metric-change{
+
+    color:green;
+
+    font-size:14px;
+}
+
+/* ===========================
+Sidebar
+=========================== */
+
+section[data-testid="stSidebar"]{
+
+    background:white;
+
+    border-right:1px solid #ececec;
+}
+
+/* ===========================
+Tables
+=========================== */
+
+table{
+
+    border-collapse:collapse;
+
+    width:100%;
+}
+
+thead{
+
+    background:#2E86DE;
+
+    color:white;
+}
+
+tbody tr:nth-child(even){
+
+    background:#f7f7f7;
+}
+
+/* ===========================
+Buttons
+=========================== */
+
+.stButton>button{
+
+    background:#2E86DE;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    height:45px;
+
+    width:100%;
+}
+
+.stButton>button:hover{
+
+    background:#1B4F72;
+}
+
+/* ===========================
+Containers
+=========================== */
+
+.chart-box{
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+    margin-bottom:20px;
+}
+
+/* ===========================
+Filter Panel
+=========================== */
+
+.filter-box{
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+/* ===========================
+Header
+=========================== */
+
+.dashboard-title{
+
+    font-size:34px;
+
+    font-weight:bold;
+
+    color:#2E86DE;
+}
+
+.dashboard-sub{
+
+    color:#777;
+
+    font-size:16px;
+}

@@ -1,0 +1,27 @@
+artifact_path: file:///C:/Users/bhavy/Downloads/InvestmentScorer/mlruns/1/models/m-7fce425ca3504210803ad0afccd158a2/artifacts
+flavors:
+  lightgbm:
+    code: null
+    data: model.skops
+    lgb_version: 4.7.0
+    model_class: lightgbm.sklearn.LGBMRegressor
+    serialization_format: skops
+    skops_trusted_types:
+    - collections.OrderedDict
+    - lightgbm.sklearn.LGBMClassifier
+    - lightgbm.sklearn.LGBMRegressor
+    - lightgbm.basic.Booster
+  python_function:
+    data: model.skops
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.lightgbm
+    python_version: 3.11.9
+mlflow_version: 3.14.0
+model_id: m-7fce425ca3504210803ad0afccd158a2
+model_size_bytes: 2682136
+model_uuid: m-7fce425ca3504210803ad0afccd158a2
+prompts: null
+run_id: 8a712c6ed3c7464ca85e24dfd9c58dfc
+utc_time_created: '2026-08-03 08:25:02.528421'

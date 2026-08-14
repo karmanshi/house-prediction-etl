@@ -1,0 +1,8 @@
+{
+    "total_samples": 446911,
+    "normal_properties": 424565,
+    "anomalies_found": 22346,
+    "anomaly_rate": 5.0,
+    "avg_normal_price_per_sqft": 1296.21,
+    "avg_anomaly_price_per_sqft": 1643.19
+}

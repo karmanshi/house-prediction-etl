@@ -1,0 +1,8 @@
+{
+    "accuracy": 0.5737,
+    "weighted_f1": 0.537,
+    "f1_Excellent": 0.2273,
+    "f1_Fair": 0.4762,
+    "f1_Good": 0.6758,
+    "f1_Low": 0.1167
+}

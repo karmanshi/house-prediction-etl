@@ -1,0 +1,236 @@
+FeatureManager
+
+│
+├── CONSTANTS
+│
+├── get_numeric_features()
+├── get_amenity_features()
+├── get_ohe_features()
+│
+├── get_hedonic_features()
+├── get_anomaly_features()
+├── get_classifier_features()
+│
+├── validate_features()
+├── clean_features()
+│
+├── prepare_hedonic_data()
+├── prepare_anomaly_data()
+├── prepare_classifier_data()
+│
+├── feature_report()
+└── print_report()
+
+HedonicTrainer
+│
+├── __init__()
+├── _load_config()
+│
+├── load_dataset()
+├── prepare_data()
+├── dataset_summary()
+├── get_model_params()
+│
+├── build_model()
+├── train_model()
+├── predict()
+├── calculate_residuals()
+│
+├── evaluate()
+├── save_metrics()
+├── save_feature_importance()
+├── save_residual_plot()
+├── save_model()
+├── log_mlflow()
+│
+├── load_model()
+├── predict_new()
+├── train()
+└── __repr__()
+
+AnomalyTrainer
+
+│
+├── __init__()
+├── _load_config()
+│
+├── load_dataset()
+├── prepare_data()
+├── dataset_summary()
+├── get_model_params()
+│
+├── build_model()
+├── train_model()
+├── detect_anomalies()
+├── calculate_statistics()
+│
+├── save_metrics()
+├── save_distribution_plot()
+├── save_model()
+├── log_mlflow()
+│
+├── load_model()
+├── predict_new()
+├── train()
+└── __repr__()
+
+OpportunityScorer
+
+│
+├── __init__()
+├── _load_config()
+├── _load_weights()
+│
+├── load_models()
+│
+├── minmax_clip()
+├── calculate_factor_scores()
+├── calculate_opportunity_score()
+├── assign_tier()
+├── calculate_percentile()
+│
+├── prepare_features()
+├── predict_prices()
+├── predict_anomalies()
+├── prepare_classifier_features()
+├── predict_tiers()
+│
+├── score_dataframe()
+├── score_single_property()
+├── save_scored_dataset()
+├── predict()
+└── __repr__()
+
+main()
+
+
+#####
+production flow:
+
+
+
+feature_engineered.csv
+          │
+          ▼
+load_models()
+          │
+          ▼
+LightGBM Hedonic
+          │
+          ▼
+predicted_price
+          │
+          ▼
+residual_pct
+          │
+          ▼
+Isolation Forest
+          │
+          ▼
+anomaly_score
+          │
+          ▼
+Business Logic
+(value_gap, growth,
+ access, safety,
+ anomaly normalization)
+          │
+          ▼
+Opportunity Score
+          │
+          ▼
+Tier Assignment
+          │
+          ▼
+LightGBM Classifier
+          │
+          ▼
+predicted_tier
+          │
+          ▼
+scored_properties.csv / API Response
+
+
+ClassifierTrainer
+
+│
+├── __init__()
+├── _load_config()
+│
+├── load_dataset()
+├── prepare_data()
+├── dataset_summary()
+├── get_model_params()
+│
+├── build_model()
+├── train_model()
+├── evaluate_model()
+│
+├── save_model()
+├── save_encoder()
+├── save_metrics()
+├── log_mlflow()
+│
+├── load_model()
+├── predict_new()
+├── train()
+└── __repr__()
+
+main()
+##################################
+Generated Files
+
+Running:
+
+python training/train_classifier.py
+
+will generate:
+
+models/
+    lgbm_classifier.pkl
+    tier_encoder.pkl
+
+metrics/
+    classifier_metrics.json
+
+evaluation_plots/
+    confusion_matrix.png
+
+mlruns/
+
+
+##############
+to run comaprision
+
+python training/train_hedonic.py --compare
+
+(if you later add a --compare flag).
+
+It creates
+
+comparison.csv
+
+comparison.png
+
+MLflow logs
+
+####Suggested execution order
+feature_engineering.py
+        │
+        ▼
+test_feature_engineering.py
+        │
+        ▼
+run_all.py
+        │
+        ▼
+test_models.py
+        │
+        ▼
+test_scoring.py
+        │
+        ▼
+backend/main.py
+        │
+        ▼
+test_api.py

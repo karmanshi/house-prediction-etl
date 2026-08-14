@@ -1,0 +1,14 @@
+data:
+  raw_path:  data\etl-main\etl\output_data\cleaned_house_data.csv
+  engineered_path: data/processed/feature_engineered.csv
+  scored_path: data/processed/scored_properties.csv
+
+models:
+  hedonic: models/lgbm_hedonic.pkl
+  anomaly: models/iso_forest.pkl
+  classifier: models/lgbm_classifier.pkl
+  tier_encoder: models/tier_encoder.pkl
+  label_encoders: models/label_encoders.pkl
+dashboard:
+  top_deals_limit: 20
+  map_sample_size: 3000

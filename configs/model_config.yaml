@@ -1,0 +1,30 @@
+hedonic_model:
+  n_estimators: 500
+  learning_rate: 0.05
+  max_depth: 6
+  num_leaves: 63
+  subsample: 0.8
+  colsample_bytree: 0.8
+
+anomaly_model:
+  n_estimators: 100
+  contamination: 0.05
+
+classifier:
+  n_estimators: 300
+  learning_rate: 0.05
+  max_depth: 5
+  num_leaves: 31
+
+scoring_weights:
+  value_gap: 0.35
+  growth: 0.20
+  access: 0.15
+  safety: 0.12
+  anomaly: 0.05
+
+tier_thresholds:
+  low: 0
+  fair: 30
+  good: 50
+  excellent: 70
